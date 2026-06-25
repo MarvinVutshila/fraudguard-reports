@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-25T20:03:27.219245",
+  "generated_at": "2026-06-25T22:02:38.678494",
   "period": {
-    "week_start": "2026-06-18T20:03:27.219245",
-    "month_start": "2026-05-26T20:03:27.219245"
+    "week_start": "2026-06-18T22:02:38.678494",
+    "month_start": "2026-05-26T22:02:38.678494"
   },
   "daily": {
     "transactions": [
       {
         "date": "2026-06-25",
-        "total": 301,
-        "blocked": 0,
-        "reviewed": 5,
-        "approved": 296,
-        "avg_risk": 0.0103,
-        "total_amount": 28016.639,
-        "blocked_amount": 0.0,
-        "approved_amount": 27774.479
+        "total": 1201,
+        "blocked": 4,
+        "reviewed": 4,
+        "approved": 1193,
+        "avg_risk": 0.0079,
+        "total_amount": 109645.49,
+        "blocked_amount": 182.39,
+        "approved_amount": 109243.22
       },
       {
         "date": "2026-06-24",
@@ -46,9 +46,9 @@
         "reviewed": 2,
         "approved": 502,
         "avg_risk": 0.0207,
-        "total_amount": 45671.004,
+        "total_amount": 45671.035,
         "blocked_amount": 972.3201,
-        "approved_amount": 43552.195
+        "approved_amount": 43552.22
       },
       {
         "date": "2026-06-21",
@@ -57,66 +57,66 @@
         "reviewed": 0,
         "approved": 199,
         "avg_risk": 0.0116,
-        "total_amount": 18153.746,
+        "total_amount": 18153.742,
         "blocked_amount": 0.76,
-        "approved_amount": 18152.986
+        "approved_amount": 18152.982
       }
     ]
   },
   "weekly": {
-    "total": 1515,
-    "blocked": 12,
-    "reviewed": 8,
-    "approved": 1495,
-    "avg_risk": 0.0155,
-    "total_amount": 186773.23,
-    "blocked_amount": 1475.91,
-    "approved_amount": 183897.33
+    "total": 2415,
+    "blocked": 16,
+    "reviewed": 7,
+    "approved": 2392,
+    "avg_risk": 0.0124,
+    "total_amount": 268402.34,
+    "blocked_amount": 1658.3002,
+    "approved_amount": 265366.38
   },
   "monthly": {
-    "total": 1515,
-    "blocked": 12,
-    "reviewed": 8,
-    "approved": 1495,
-    "avg_risk": 0.0155,
-    "total_amount": 186773.23,
-    "blocked_amount": 1475.91,
-    "approved_amount": 183897.33
+    "total": 2415,
+    "blocked": 16,
+    "reviewed": 7,
+    "approved": 2392,
+    "avg_risk": 0.0124,
+    "total_amount": 268402.34,
+    "blocked_amount": 1658.3002,
+    "approved_amount": 265366.38
   },
   "summary": {
     "risk_distribution": [
       {
         "risk_level": "LOW",
-        "count": 1495,
-        "avg_probability": 0.0079,
-        "percentage": "98.68"
+        "count": 2392,
+        "avg_probability": 0.0073,
+        "percentage": "99.05"
       },
       {
         "risk_level": "MEDIUM",
-        "count": 8,
-        "avg_probability": 0.3008,
-        "percentage": "0.53"
+        "count": 7,
+        "avg_probability": 0.2809,
+        "percentage": "0.29"
       },
       {
         "risk_level": "HIGH",
-        "count": 4,
-        "avg_probability": 0.336,
-        "percentage": "0.26"
+        "count": 8,
+        "avg_probability": 0.3321,
+        "percentage": "0.33"
       },
       {
         "risk_level": "CRITICAL",
         "count": 8,
         "avg_probability": 0.9832,
-        "percentage": "0.53"
+        "percentage": "0.33"
       }
     ],
     "top_users": [
       {
         "username": "marvinmakhubela04@gmail.com",
-        "login_count": 73,
-        "successful": 46,
+        "login_count": 74,
+        "successful": 47,
         "failed": 27,
-        "success_rate": "63.01"
+        "success_rate": "63.51"
       },
       {
         "username": "makhubelaavela@gmail.com",
@@ -134,6 +134,13 @@
       }
     ],
     "override_activity": [
+      {
+        "analyst": "marvinmakhubela04@gmail.com",
+        "override_count": 7,
+        "approved_overrides": 3,
+        "blocked_overrides": 4,
+        "approve_rate": "42.86"
+      },
       {
         "analyst": "makhubelaavela@gmail.com",
         "override_count": 4,
@@ -186,6 +193,11 @@
         "avg_risk": 0.0145
       },
       {
+        "hour": "19",
+        "count": 900,
+        "avg_risk": 0.0071
+      },
+      {
         "hour": "20",
         "count": 100,
         "avg_risk": 0.0156
@@ -204,25 +216,25 @@
     "decision_breakdown": [
       {
         "decision": "APPROVE",
-        "count": 1495,
-        "avg_probability": 0.0079,
-        "percentage": "98.68"
+        "count": 2392,
+        "avg_probability": 0.0073,
+        "percentage": "99.05"
       },
       {
         "decision": "BLOCK",
-        "count": 12,
-        "avg_probability": 0.7675,
-        "percentage": "0.79"
+        "count": 16,
+        "avg_probability": 0.6576,
+        "percentage": "0.66"
       },
       {
         "decision": "REVIEW",
-        "count": 8,
-        "avg_probability": 0.3008,
-        "percentage": "0.53"
+        "count": 7,
+        "avg_probability": 0.2809,
+        "percentage": "0.29"
       }
     ],
     "total_users": 3,
     "active_users_7d": 3,
-    "total_transactions_30d": 1515
+    "total_transactions_30d": 2415
   }
 }
