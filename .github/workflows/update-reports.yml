@@ -3,7 +3,7 @@ name: Update Reports Dashboard
 on:
   schedule:
     - cron: '0 * * * *'  # Every hour
-  workflow_dispatch:
+  workflow_dispatch:      # Manual trigger
 
 jobs:
   update-reports:
