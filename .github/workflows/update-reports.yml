@@ -1,0 +1,34 @@
+name: Update Reports Dashboard
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Every hour
+  workflow_dispatch:
+
+jobs:
+  update-reports:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install psycopg2-binary python-dotenv
+      
+      - name: Generate report
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python generate_report.py
+      
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add data/reports.json
+          git diff --staged --quiet || (git commit -m "Auto-update report $(date +'%Y-%m-%d %H:%M:%S')" && git push)
