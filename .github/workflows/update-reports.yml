@@ -36,5 +36,13 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Pull latest changes
+          git pull origin master --rebase
+          
+          # Add and commit
           git add data/reports.json
-          git diff --staged --quiet || (git commit -m "Auto-update report $(date +'%Y-%m-%d %H:%M:%S')" && git push --force origin master)
+          git diff --staged --quiet || (git commit -m "Auto-update report $(date +'%Y-%m-%d %H:%M:%S')")
+          
+          # Push with force if needed
+          git push origin master --force-with-lease
