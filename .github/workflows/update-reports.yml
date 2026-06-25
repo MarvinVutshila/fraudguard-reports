@@ -37,9 +37,17 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # Pull latest changes first
-          git pull origin master --rebase
+          # Pull latest changes with rebase
+          git pull origin master --rebase || true
           
-          # Add and commit
+          # Add the changed file
           git add data/reports.json
-          git diff --staged --quiet || (git commit -m "Auto-update report $(date +'%Y-%m-%d %H:%M:%S')" && git push origin master)
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update report $(date +'%Y-%m-%d %H:%M:%S')"
+            # Try to push, if fails, pull and try again
+            git push origin master || (git pull origin master --rebase && git push origin master)
+          fi
