@@ -1,0 +1,41 @@
+# render.yaml
+services:
+  # Reports Dashboard
+  - type: web
+    name: fraudguard-reports
+    runtime: static
+    buildCommand: |
+      pip install -r requirements.txt
+      python generate_report.py
+    staticPublishPath: .
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fraudguard-db
+          property: connectionString
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
+
+  # Background Worker - Updates reports every hour
+  - type: cron
+    name: fraudguard-report-updater
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run_report.py
+    schedule: "0 * * * *"  # Every hour
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fraudguard-db
+          property: connectionString
+
+databases:
+  - name: fraudguard-db
+    databaseName: fraud_detection
+    plan: starter

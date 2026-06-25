@@ -1,0 +1,228 @@
+{
+  "generated_at": "2026-06-25T20:03:27.219245",
+  "period": {
+    "week_start": "2026-06-18T20:03:27.219245",
+    "month_start": "2026-05-26T20:03:27.219245"
+  },
+  "daily": {
+    "transactions": [
+      {
+        "date": "2026-06-25",
+        "total": 301,
+        "blocked": 0,
+        "reviewed": 5,
+        "approved": 296,
+        "avg_risk": 0.0103,
+        "total_amount": 28016.639,
+        "blocked_amount": 0.0,
+        "approved_amount": 27774.479
+      },
+      {
+        "date": "2026-06-24",
+        "total": 200,
+        "blocked": 2,
+        "reviewed": 0,
+        "approved": 198,
+        "avg_risk": 0.0158,
+        "total_amount": 19177.754,
+        "blocked_amount": 247.86,
+        "approved_amount": 18929.895
+      },
+      {
+        "date": "2026-06-23",
+        "total": 303,
+        "blocked": 2,
+        "reviewed": 1,
+        "approved": 300,
+        "avg_risk": 0.0143,
+        "total_amount": 75754.12,
+        "blocked_amount": 254.97,
+        "approved_amount": 75487.805
+      },
+      {
+        "date": "2026-06-22",
+        "total": 511,
+        "blocked": 7,
+        "reviewed": 2,
+        "approved": 502,
+        "avg_risk": 0.0207,
+        "total_amount": 45671.004,
+        "blocked_amount": 972.3201,
+        "approved_amount": 43552.195
+      },
+      {
+        "date": "2026-06-21",
+        "total": 200,
+        "blocked": 1,
+        "reviewed": 0,
+        "approved": 199,
+        "avg_risk": 0.0116,
+        "total_amount": 18153.746,
+        "blocked_amount": 0.76,
+        "approved_amount": 18152.986
+      }
+    ]
+  },
+  "weekly": {
+    "total": 1515,
+    "blocked": 12,
+    "reviewed": 8,
+    "approved": 1495,
+    "avg_risk": 0.0155,
+    "total_amount": 186773.23,
+    "blocked_amount": 1475.91,
+    "approved_amount": 183897.33
+  },
+  "monthly": {
+    "total": 1515,
+    "blocked": 12,
+    "reviewed": 8,
+    "approved": 1495,
+    "avg_risk": 0.0155,
+    "total_amount": 186773.23,
+    "blocked_amount": 1475.91,
+    "approved_amount": 183897.33
+  },
+  "summary": {
+    "risk_distribution": [
+      {
+        "risk_level": "LOW",
+        "count": 1495,
+        "avg_probability": 0.0079,
+        "percentage": "98.68"
+      },
+      {
+        "risk_level": "MEDIUM",
+        "count": 8,
+        "avg_probability": 0.3008,
+        "percentage": "0.53"
+      },
+      {
+        "risk_level": "HIGH",
+        "count": 4,
+        "avg_probability": 0.336,
+        "percentage": "0.26"
+      },
+      {
+        "risk_level": "CRITICAL",
+        "count": 8,
+        "avg_probability": 0.9832,
+        "percentage": "0.53"
+      }
+    ],
+    "top_users": [
+      {
+        "username": "marvinmakhubela04@gmail.com",
+        "login_count": 73,
+        "successful": 46,
+        "failed": 27,
+        "success_rate": "63.01"
+      },
+      {
+        "username": "makhubelaavela@gmail.com",
+        "login_count": 11,
+        "successful": 2,
+        "failed": 9,
+        "success_rate": "18.18"
+      },
+      {
+        "username": "Pmandla@proton.me",
+        "login_count": 10,
+        "successful": 2,
+        "failed": 8,
+        "success_rate": "20.00"
+      }
+    ],
+    "override_activity": [
+      {
+        "analyst": "makhubelaavela@gmail.com",
+        "override_count": 4,
+        "approved_overrides": 1,
+        "blocked_overrides": 3,
+        "approve_rate": "25.00"
+      },
+      {
+        "analyst": "admin",
+        "override_count": 2,
+        "approved_overrides": 1,
+        "blocked_overrides": 1,
+        "approve_rate": "50.00"
+      }
+    ],
+    "hourly_pattern": [
+      {
+        "hour": "0",
+        "count": 1,
+        "avg_risk": 0.0856
+      },
+      {
+        "hour": "1",
+        "count": 300,
+        "avg_risk": 0.01
+      },
+      {
+        "hour": "12",
+        "count": 3,
+        "avg_risk": 0.019
+      },
+      {
+        "hour": "13",
+        "count": 100,
+        "avg_risk": 0.0176
+      },
+      {
+        "hour": "14",
+        "count": 100,
+        "avg_risk": 0.0141
+      },
+      {
+        "hour": "16",
+        "count": 200,
+        "avg_risk": 0.0097
+      },
+      {
+        "hour": "17",
+        "count": 500,
+        "avg_risk": 0.0145
+      },
+      {
+        "hour": "20",
+        "count": 100,
+        "avg_risk": 0.0156
+      },
+      {
+        "hour": "21",
+        "count": 111,
+        "avg_risk": 0.0528
+      },
+      {
+        "hour": "22",
+        "count": 100,
+        "avg_risk": 0.0057
+      }
+    ],
+    "decision_breakdown": [
+      {
+        "decision": "APPROVE",
+        "count": 1495,
+        "avg_probability": 0.0079,
+        "percentage": "98.68"
+      },
+      {
+        "decision": "BLOCK",
+        "count": 12,
+        "avg_probability": 0.7675,
+        "percentage": "0.79"
+      },
+      {
+        "decision": "REVIEW",
+        "count": 8,
+        "avg_probability": 0.3008,
+        "percentage": "0.53"
+      }
+    ],
+    "total_users": 3,
+    "active_users_7d": 3,
+    "total_transactions_30d": 1515
+  }
+}

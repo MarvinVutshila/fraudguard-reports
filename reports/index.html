@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FraudGuard - Analytics Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-theme="dark">
+
+    <!-- PASSWORD PROTECTION -->
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="login-icon">🛡️</div>
+                <h1>FraudGuard</h1>
+                <p class="login-subtitle">Analytics Dashboard</p>
+                <p class="login-desc">Enter password to access</p>
+            </div>
+            <div class="login-form">
+                <div class="login-input-group">
+                    <span class="login-input-icon">🔐</span>
+                    <input 
+                        type="password" 
+                        id="password-input" 
+                        placeholder="Enter password"
+                        onkeydown="if(event.key==='Enter') checkPassword()"
+                        autofocus
+                    />
+                </div>
+                <button onclick="checkPassword()" id="login-btn">
+                    Unlock Dashboard →
+                </button>
+                <div id="login-error" class="login-error" style="display:none;">
+                    ❌ Incorrect password
+                </div>
+            </div>
+            <div class="login-footer">
+                <span>🔒 Secure • Encrypted</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard-content" class="dashboard" style="display:none;">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="ti ti-shield-check"></i>
+                    <span>FraudGuard</span>
+                    <span class="badge-pro">PRO</span>
+                </div>
+            </div>
+            <div class="header-center">
+                <span class="live-indicator">
+                    <span class="live-dot"></span> Live
+                </span>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                    <i class="ti ti-moon" id="theme-icon"></i>
+                </button>
+                <button class="refresh-btn" onclick="refreshData()">
+                    <i class="ti ti-refresh"></i>
+                </button>
+                <span class="timestamp" id="timestamp">Loading...</span>
+            </div>
+        </header>
+
+        <!-- KPI CARDS -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-icon blue"><i class="ti ti-credit-card"></i></div>
+                <div>
+                    <div class="kpi-label">Total Transactions</div>
+                    <div class="kpi-value" id="total-tx">0</div>
+                    <div class="kpi-sub" id="total-tx-sub">0 blocked (0%)</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon green"><i class="ti ti-coins"></i></div>
+                <div>
+                    <div class="kpi-label">Total Amount</div>
+                    <div class="kpi-value" id="total-amount">$0</div>
+                    <div class="kpi-sub">Last 7 days</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon red"><i class="ti ti-ban"></i></div>
+                <div>
+                    <div class="kpi-label">Blocked Amount</div>
+                    <div class="kpi-value" id="blocked-amount">$0</div>
+                    <div class="kpi-sub" id="blocked-count">0 transactions</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon amber"><i class="ti ti-activity"></i></div>
+                <div>
+                    <div class="kpi-label">Avg Risk Score</div>
+                    <div class="kpi-value" id="avg-risk">0%</div>
+                    <div class="kpi-sub" id="avg-risk-sub">Stable</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon purple"><i class="ti ti-eye"></i></div>
+                <div>
+                    <div class="kpi-label">Pending Review</div>
+                    <div class="kpi-value" id="pending-review">0</div>
+                    <div class="kpi-sub">Awaiting decision</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon teal"><i class="ti ti-users"></i></div>
+                <div>
+                    <div class="kpi-label">Active Users</div>
+                    <div class="kpi-value" id="active-users">0</div>
+                    <div class="kpi-sub">Last 7 days</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="charts-grid">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div>
+                        <h3>📊 Daily Transaction Volume</h3>
+                        <p class="chart-sub">Last 7 days</p>
+                    </div>
+                    <div class="chart-legend">
+                        <span><span class="dot total"></span>Total</span>
+                        <span><span class="dot blocked"></span>Blocked</span>
+                        <span><span class="dot approved"></span>Approved</span>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="dailyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <div>
+                        <h3>🎯 Risk Distribution</h3>
+                        <p class="chart-sub">Last 30 days</p>
+                    </div>
+                </div>
+                <div class="donut-container">
+                    <div class="donut">
+                        <canvas id="riskChart" width="150" height="150"></canvas>
+                    </div>
+                    <div class="risk-legend">
+                        <div><span class="dot low"></span>Low <span class="value" id="r-low">0%</span></div>
+                        <div><span class="dot medium"></span>Medium <span class="value" id="r-med">0%</span></div>
+                        <div><span class="dot high"></span>High <span class="value" id="r-high">0%</span></div>
+                        <div><span class="dot critical"></span>Critical <span class="value" id="r-crit">0%</span></div>
+                        <div class="total-label">Total: <strong id="risk-total">0</strong> transactions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLES -->
+        <div class="tables-grid">
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>👥 Top Users</h3>
+                    <span class="table-badge">Activity</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Logins</th>
+                                <th>Success</th>
+                                <th>Failed</th>
+                                <th>Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-table">
+                            <tr><td colspan="5" class="empty">No data</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>⚖️ Analyst Overrides</h3>
+                    <span class="table-badge">Last 30 days</span>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Analyst</th>
+                                <th>Total</th>
+                                <th>Approved</th>
+                                <th>Blocked</th>
+                                <th>Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="override-table">
+                            <tr><td colspan="5" class="empty">No data</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SYSTEM HEALTH -->
+        <div class="health-card">
+            <div class="health-header">
+                <h3>🖥️ System Health</h3>
+                <span class="status-online">● All systems operational</span>
+            </div>
+            <div class="health-grid">
+                <div class="health-item">
+                    <div class="value" id="h-uptime">99.8%</div>
+                    <div class="label">Uptime</div>
+                </div>
+                <div class="health-item">
+                    <div class="value" id="h-latency">84ms</div>
+                    <div class="label">Latency</div>
+                </div>
+                <div class="health-item">
+                    <div class="value" id="h-accuracy">94.2%</div>
+                    <div class="label">Accuracy</div>
+                </div>
+                <div class="health-item">
+                    <div class="value" id="h-analysts">0</div>
+                    <div class="label">Analysts</div>
+                </div>
+                <div class="health-item">
+                    <div class="value" id="h-alerts">0</div>
+                    <div class="label">Alerts</div>
+                </div>
+                <div class="health-item">
+                    <div class="value" id="h-users">0</div>
+                    <div class="label">Total Users</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

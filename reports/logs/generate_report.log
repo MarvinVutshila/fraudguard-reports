@@ -1,0 +1,58 @@
+2026-06-25 18:41:28,185 [INFO] ============================================================
+2026-06-25 18:41:28,185 [INFO] FraudGuard report generation starting
+2026-06-25 18:41:28,186 [ERROR] Report generation failed.
+Traceback (most recent call last):
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 429, in main
+    conn = get_connection()
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 164, in get_connection
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: DATABASE_URL is not set. Copy .env.example to .env and fill in your Render Postgres connection string.
+2026-06-25 18:43:06,469 [INFO] ============================================================
+2026-06-25 18:43:06,470 [INFO] FraudGuard report generation starting
+2026-06-25 18:43:06,470 [ERROR] Report generation failed.
+Traceback (most recent call last):
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 429, in main
+    conn = get_connection()
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 164, in get_connection
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: DATABASE_URL is not set. Copy .env.example to .env and fill in your Render Postgres connection string.
+2026-06-25 18:43:13,078 [INFO] ============================================================
+2026-06-25 18:43:13,078 [INFO] FraudGuard report generation starting
+2026-06-25 18:43:13,078 [ERROR] Report generation failed.
+Traceback (most recent call last):
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 429, in main
+    conn = get_connection()
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 164, in get_connection
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: DATABASE_URL is not set. Copy .env.example to .env and fill in your Render Postgres connection string.
+2026-06-25 18:44:30,995 [INFO] ============================================================
+2026-06-25 18:44:30,996 [INFO] FraudGuard report generation starting
+2026-06-25 18:44:36,100 [INFO] Connected to database.
+2026-06-25 18:44:36,101 [INFO] Aggregating transaction summaries for daily / weekly / monthly...
+2026-06-25 18:44:36,973 [ERROR] Report generation failed.
+Traceback (most recent call last):
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 432, in main
+    report = build_report(conn)
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 377, in build_report
+    name: get_transaction_summary(conn, since) for name, since in periods.items()
+          ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 203, in get_transaction_summary
+    row = fetch_one(conn, sql, (since,))
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 179, in fetch_one
+    rows = fetch_all(conn, sql, params)
+  File "c:\Users\marvi\.vscode\Analysis\reports\generate_report.py", line 174, in fetch_all
+    cur.execute(sql, params or ())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\marvi\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column "effective_decision" does not exist
+LINE 4:             COUNT(*) FILTER (WHERE effective_decision ILIKE ...
+                                           ^
+
