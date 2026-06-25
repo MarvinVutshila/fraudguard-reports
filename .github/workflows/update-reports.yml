@@ -18,6 +18,17 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
       
+      - name: List files
+        run: |
+          echo "Files in repository:"
+          ls -la
+          echo "Checking for generate_report.py..."
+          if [ -f "generate_report.py" ]; then
+            echo "✅ generate_report.py found"
+          else
+            echo "❌ generate_report.py NOT found"
+          fi
+      
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -29,7 +40,16 @@ jobs:
       - name: Generate report
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: python generate_report.py
+        run: |
+          echo "Running generate_report.py..."
+          python generate_report.py
+          echo "Checking generated file..."
+          if [ -f "data/reports.json" ]; then
+            echo "✅ reports.json generated"
+            head -20 data/reports.json
+          else
+            echo "❌ reports.json NOT generated"
+          fi
       
       - name: Commit and push changes
         run: |
