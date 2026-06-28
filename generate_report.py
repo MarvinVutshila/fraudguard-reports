@@ -1,4 +1,3 @@
-# generate_report.py
 import os
 import json
 import psycopg2
@@ -7,10 +6,8 @@ import logging
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
@@ -37,7 +34,6 @@ def fetch_one(conn, sql, params=None):
     return rows[0] if rows else None
 
 def clean_value(value):
-    """Clean data for presentation"""
     if value is None:
         return 0
     if isinstance(value, float):
@@ -46,7 +42,7 @@ def clean_value(value):
         return value.strip()
     return value
 
-def get_transaction_summary(conn, since, label=""):
+def get_transaction_summary(conn, since):
     sql = """
         SELECT 
             COUNT(*) as total,
@@ -232,12 +228,11 @@ def get_system_stats(conn):
     return stats
 
 def build_report(conn):
-    logger.info("Aggregating transaction summaries for daily / weekly / monthly...")
-    
+    logger.info("Aggregating transaction summaries...")
     now = datetime.now()
     week_ago = now - timedelta(days=7)
     month_ago = now - timedelta(days=30)
-    
+
     report = {
         "generated_at": now.isoformat(),
         "period": {
@@ -247,8 +242,8 @@ def build_report(conn):
         "daily": {
             "transactions": get_daily_transactions(conn)
         },
-        "weekly": get_transaction_summary(conn, week_ago, "Weekly"),
-        "monthly": get_transaction_summary(conn, month_ago, "Monthly"),
+        "weekly": get_transaction_summary(conn, week_ago),
+        "monthly": get_transaction_summary(conn, month_ago),
         "summary": {
             "risk_distribution": get_risk_distribution(conn),
             "top_users": get_top_users(conn),
@@ -258,8 +253,7 @@ def build_report(conn):
             **get_system_stats(conn)
         }
     }
-    
-    # Convert Decimal objects to float
+
     def convert(obj):
         if isinstance(obj, dict):
             return {k: convert(v) for k, v in obj.items()}
@@ -267,36 +261,44 @@ def build_report(conn):
             return [convert(item) for item in obj]
         elif isinstance(obj, datetime):
             return obj.isoformat()
-        elif hasattr(obj, 'item'):  # Decimal
+        elif hasattr(obj, 'item'):
             return float(obj)
         else:
             return obj
-    
+
     return convert(report)
 
+# ============================================================
+# FIXED: always writes to root/data/reports.json
+# ============================================================
 def save_report(report_data, filename="data/reports.json"):
-    os.makedirs("data", exist_ok=True)
+    # Get the directory where this script lives (reports/)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Resolve relative path to the parent (root) folder
+    if not os.path.isabs(filename):
+        filename = os.path.join(script_dir, '..', filename)
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         json.dump(report_data, f, indent=2, default=str)
     logger.info(f"Report saved to {filename}")
+# ============================================================
 
 def main():
     logger.info("=" * 60)
     logger.info("FraudGuard Report Generation Starting")
     logger.info("=" * 60)
-    
+
     try:
         if not DATABASE_URL:
             logger.error("DATABASE_URL is not set. Please create .env file.")
             return False
-        
+
         conn = get_connection()
         report = build_report(conn)
         conn.close()
-        
+
         save_report(report)
-        
-        # Print summary
+
         weekly = report.get('weekly', {})
         logger.info("")
         logger.info("📊 Report Summary:")
@@ -312,7 +314,7 @@ def main():
         logger.info("📊 Report available at: data/reports.json")
         logger.info("🌐 Open index.html to view the dashboard")
         return True
-        
+
     except Exception as e:
         logger.error(f"❌ Report generation failed: {e}")
         import traceback
