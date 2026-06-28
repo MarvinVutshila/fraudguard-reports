@@ -98,11 +98,12 @@ function checkPassword() {
 }
 
 // ============================================================
-// LOAD DATA
+// LOAD DATA  (with cache‑busting)
 // ============================================================
 async function loadData() {
     try {
-        const response = await fetch('data/reports.json');
+        // 🔥 ADDED: cache‑busting parameter to always get fresh data
+        const response = await fetch('data/reports.json?t=' + Date.now());
         if (!response.ok) throw new Error('Failed to load data');
         const data = await response.json();
         renderDashboard(data);
@@ -330,13 +331,15 @@ function renderOverrides(overrides) {
     }
 
     tbody.innerHTML = overrides.slice(0, 5).map(o => {
-        const rate = o.total > 0 ? ((o.approved / o.total) * 100).toFixed(1) : 0;
+        // The SQL aliases are: override_count, approved_overrides, blocked_overrides
+        // The dashboard expects: total, approved, blocked (these are the aliases we used)
+        const rate = o.override_count > 0 ? ((o.approved_overrides / o.override_count) * 100).toFixed(1) : 0;
         return `
             <tr>
                 <td><strong>${o.analyst || 'Unknown'}</strong></td>
-                <td>${o.total || 0}</td>
-                <td class="success">${o.approved || 0}</td>
-                <td class="danger">${o.blocked || 0}</td>
+                <td>${o.override_count || 0}</td>
+                <td class="success">${o.approved_overrides || 0}</td>
+                <td class="danger">${o.blocked_overrides || 0}</td>
                 <td>${rate}%</td>
             </tr>
         `;
