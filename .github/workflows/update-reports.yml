@@ -11,38 +11,44 @@ permissions:
 jobs:
   update-reports:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.PAT_TOKEN }}
           fetch-depth: 0
-      
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: pip install psycopg2-binary python-dotenv
-      
+
       - name: Generate report
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: python generate_report.py
-      
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # Pull latest changes
+
+          # Stash any local changes so rebase can work
+          git stash
+
+          # Pull latest changes with rebase
           git pull origin master --rebase
-          
-          # Add and commit
+
+          # Restore the stashed file (the generated report)
+          git stash pop || true
+
+          # Add and commit the generated report
           git add data/reports.json
           git diff --staged --quiet || (git commit -m "Auto-update report $(date +'%Y-%m-%d %H:%M:%S')")
-          
-          # Push with force if needed
+
+          # Push with force-lease to prevent overwrites
           git push origin master --force-with-lease
