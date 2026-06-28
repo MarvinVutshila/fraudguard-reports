@@ -134,18 +134,21 @@ def get_top_users(conn):
         logger.warning(f"Could not fetch top users: {e}")
         return []
 
+# ============================================================
+# FIXED: Correct column names based on actual table schema
+# ============================================================
 def get_override_activity(conn):
     try:
         sql = """
             SELECT 
-                overridden_by as analyst,
+                analyst,
                 COUNT(*) as override_count,
-                COUNT(*) FILTER (WHERE new_decision = 'APPROVE') as approved_overrides,
-                COUNT(*) FILTER (WHERE new_decision = 'BLOCK') as blocked_overrides,
-                ROUND((COUNT(*) FILTER (WHERE new_decision = 'APPROVE') * 100.0 / COUNT(*)), 2) as approve_rate
+                COUNT(*) FILTER (WHERE human_decision = 'APPROVE') as approved_overrides,
+                COUNT(*) FILTER (WHERE human_decision = 'BLOCK') as blocked_overrides,
+                ROUND((COUNT(*) FILTER (WHERE human_decision = 'APPROVE') * 100.0 / COUNT(*)), 2) as approve_rate
             FROM transaction_overrides
             WHERE timestamp > NOW() - INTERVAL '30 days'
-            GROUP BY overridden_by
+            GROUP BY analyst
             ORDER BY override_count DESC
         """
         results = fetch_all(conn, sql)
@@ -156,6 +159,7 @@ def get_override_activity(conn):
     except Exception as e:
         logger.warning(f"Could not fetch override activity: {e}")
         return []
+# ============================================================
 
 def get_hourly_pattern(conn):
     sql = """
