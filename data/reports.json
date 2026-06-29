@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-29T16:40:54.405849",
+  "generated_at": "2026-06-29T18:55:52.845587",
   "period": {
-    "week_start": "2026-06-22T16:40:54.405849",
-    "month_start": "2026-05-30T16:40:54.405849"
+    "week_start": "2026-06-22T18:55:52.845587",
+    "month_start": "2026-05-30T18:55:52.845587"
   },
   "daily": {
     "transactions": [
       {
         "date": "2026-06-29",
-        "total": 1022,
-        "blocked": 12,
-        "reviewed": 7,
-        "approved": 1003,
-        "avg_risk": 0.0191,
-        "total_amount": 81497.914,
-        "blocked_amount": 760.26,
-        "approved_amount": 79757.16
+        "total": 2022,
+        "blocked": 14,
+        "reviewed": 16,
+        "approved": 1992,
+        "avg_risk": 0.0153,
+        "total_amount": 158900.75,
+        "blocked_amount": 771.2499,
+        "approved_amount": 156295.89
       },
       {
         "date": "2026-06-28",
@@ -24,9 +24,9 @@
         "reviewed": 3,
         "approved": 694,
         "avg_risk": 0.0104,
-        "total_amount": 67320.04,
+        "total_amount": 67320.02,
         "blocked_amount": 171.04,
-        "approved_amount": 66791.664
+        "approved_amount": 66791.64
       },
       {
         "date": "2026-06-26",
@@ -35,9 +35,9 @@
         "reviewed": 2,
         "approved": 298,
         "avg_risk": 0.0059,
-        "total_amount": 21477.467,
+        "total_amount": 21477.477,
         "blocked_amount": 0.0,
-        "approved_amount": 20191.107
+        "approved_amount": 20191.117
       },
       {
         "date": "2026-06-25",
@@ -46,9 +46,9 @@
         "reviewed": 4,
         "approved": 1193,
         "avg_risk": 0.0079,
-        "total_amount": 109645.51,
+        "total_amount": 109645.49,
         "blocked_amount": 182.39,
-        "approved_amount": 109243.234
+        "approved_amount": 109243.22
       },
       {
         "date": "2026-06-24",
@@ -57,9 +57,9 @@
         "reviewed": 0,
         "approved": 198,
         "avg_risk": 0.0158,
-        "total_amount": 19177.75,
+        "total_amount": 19177.752,
         "blocked_amount": 247.86,
-        "approved_amount": 18929.89
+        "approved_amount": 18929.893
       },
       {
         "date": "2026-06-23",
@@ -68,68 +68,68 @@
         "reviewed": 1,
         "approved": 300,
         "avg_risk": 0.0143,
-        "total_amount": 75754.164,
+        "total_amount": 75754.16,
         "blocked_amount": 254.97,
-        "approved_amount": 75487.85
+        "approved_amount": 75487.84
       },
       {
         "date": "2026-06-22",
-        "total": 311,
-        "blocked": 7,
-        "reviewed": 2,
-        "approved": 302,
-        "avg_risk": 0.0277,
-        "total_amount": 31640.379,
-        "blocked_amount": 972.3201,
-        "approved_amount": 29521.57
+        "total": 111,
+        "blocked": 6,
+        "reviewed": 1,
+        "approved": 104,
+        "avg_risk": 0.0511,
+        "total_amount": 11510.134,
+        "blocked_amount": 971.3199,
+        "approved_amount": 9399.572
       }
     ]
   },
   "weekly": {
-    "total": 4037,
-    "blocked": 30,
-    "reviewed": 19,
-    "approved": 3988,
-    "avg_risk": 0.0134,
-    "total_amount": 406513.34,
-    "blocked_amount": 2588.84,
-    "approved_amount": 399922.53
+    "total": 4837,
+    "blocked": 31,
+    "reviewed": 27,
+    "approved": 4779,
+    "avg_risk": 0.0129,
+    "total_amount": 463785.78,
+    "blocked_amount": 2598.83,
+    "approved_amount": 456339.2
   },
   "monthly": {
-    "total": 4437,
-    "blocked": 31,
-    "reviewed": 19,
-    "approved": 4387,
-    "avg_risk": 0.0132,
-    "total_amount": 438698.12,
-    "blocked_amount": 2589.6,
-    "approved_amount": 432106.66
+    "total": 5437,
+    "blocked": 33,
+    "reviewed": 28,
+    "approved": 5376,
+    "avg_risk": 0.0128,
+    "total_amount": 516101.12,
+    "blocked_amount": 2600.59,
+    "approved_amount": 508645.56
   },
   "summary": {
     "risk_distribution": [
       {
         "risk_level": "LOW",
-        "count": 4387,
-        "avg_probability": 0.0065,
-        "percentage": "98.87"
+        "count": 5376,
+        "avg_probability": 0.0064,
+        "percentage": "98.88"
       },
       {
         "risk_level": "MEDIUM",
-        "count": 19,
-        "avg_probability": 0.285,
-        "percentage": "0.43"
+        "count": 26,
+        "avg_probability": 0.3016,
+        "percentage": "0.48"
       },
       {
         "risk_level": "HIGH",
-        "count": 10,
-        "avg_probability": 0.3849,
-        "percentage": "0.23"
+        "count": 12,
+        "avg_probability": 0.4046,
+        "percentage": "0.22"
       },
       {
         "risk_level": "CRITICAL",
-        "count": 21,
-        "avg_probability": 0.9907,
-        "percentage": "0.47"
+        "count": 23,
+        "avg_probability": 0.9868,
+        "percentage": "0.42"
       }
     ],
     "top_users": [
@@ -206,13 +206,13 @@
       },
       {
         "hour": "16",
-        "count": 22,
-        "avg_risk": 0.3693
+        "count": 1022,
+        "avg_risk": 0.0191
       },
       {
         "hour": "17",
-        "count": 500,
-        "avg_risk": 0.0145
+        "count": 300,
+        "avg_risk": 0.0143
       },
       {
         "hour": "19",
@@ -233,25 +233,25 @@
     "decision_breakdown": [
       {
         "decision": "APPROVE",
-        "count": 4387,
-        "avg_probability": 0.0065,
-        "percentage": "98.87"
+        "count": 5376,
+        "avg_probability": 0.0064,
+        "percentage": "98.88"
       },
       {
         "decision": "BLOCK",
-        "count": 31,
-        "avg_probability": 0.7953,
-        "percentage": "0.70"
+        "count": 33,
+        "avg_probability": 0.8044,
+        "percentage": "0.61"
       },
       {
         "decision": "REVIEW",
-        "count": 19,
-        "avg_probability": 0.285,
-        "percentage": "0.43"
+        "count": 28,
+        "avg_probability": 0.3159,
+        "percentage": "0.51"
       }
     ],
     "total_users": 3,
     "active_users_7d": 3,
-    "total_transactions_30d": 4437
+    "total_transactions_30d": 5437
   }
 }
