@@ -132,23 +132,26 @@ def get_top_users(conn):
         return results
     except Exception as e:
         logger.warning(f"Could not fetch top users: {e}")
+        conn.rollback()   # ← clear the aborted transaction
         return []
 
 # ============================================================
-# FIXED: Correct column names based on actual table schema
+# FIXED: Use the correct column names from the actual table
+#   overridden_by  → analyst
+#   new_decision   → the final decision after override
 # ============================================================
 def get_override_activity(conn):
     try:
         sql = """
             SELECT 
-                analyst,
+                overridden_by,
                 COUNT(*) as override_count,
-                COUNT(*) FILTER (WHERE human_decision = 'APPROVE') as approved_overrides,
-                COUNT(*) FILTER (WHERE human_decision = 'BLOCK') as blocked_overrides,
-                ROUND((COUNT(*) FILTER (WHERE human_decision = 'APPROVE') * 100.0 / COUNT(*)), 2) as approve_rate
+                COUNT(*) FILTER (WHERE new_decision = 'APPROVE') as approved_overrides,
+                COUNT(*) FILTER (WHERE new_decision = 'BLOCK') as blocked_overrides,
+                ROUND((COUNT(*) FILTER (WHERE new_decision = 'APPROVE') * 100.0 / COUNT(*)), 2) as approve_rate
             FROM transaction_overrides
             WHERE timestamp > NOW() - INTERVAL '30 days'
-            GROUP BY analyst
+            GROUP BY overridden_by
             ORDER BY override_count DESC
         """
         results = fetch_all(conn, sql)
@@ -158,8 +161,8 @@ def get_override_activity(conn):
         return results
     except Exception as e:
         logger.warning(f"Could not fetch override activity: {e}")
+        conn.rollback()   # ← clear the aborted transaction
         return []
-# ============================================================
 
 def get_hourly_pattern(conn):
     sql = """
@@ -203,9 +206,11 @@ def get_system_stats(conn):
         cur.execute("SELECT COUNT(*) FROM users")
         stats['total_users'] = cur.fetchone()[0]
         cur.close()
-    except:
+    except Exception as e:
+        logger.warning(f"Could not fetch total users: {e}")
+        conn.rollback()
         stats['total_users'] = 0
-    
+
     try:
         cur = conn.cursor()
         cur.execute("""
@@ -215,9 +220,11 @@ def get_system_stats(conn):
         """)
         stats['active_users_7d'] = cur.fetchone()[0]
         cur.close()
-    except:
+    except Exception as e:
+        logger.warning(f"Could not fetch active users: {e}")
+        conn.rollback()
         stats['active_users_7d'] = 0
-    
+
     try:
         cur = conn.cursor()
         cur.execute("""
@@ -226,9 +233,11 @@ def get_system_stats(conn):
         """)
         stats['total_transactions_30d'] = cur.fetchone()[0]
         cur.close()
-    except:
+    except Exception as e:
+        logger.warning(f"Could not fetch transaction count: {e}")
+        conn.rollback()
         stats['total_transactions_30d'] = 0
-    
+
     return stats
 
 def build_report(conn):
@@ -272,34 +281,30 @@ def build_report(conn):
 
     return convert(report)
 
-# ============================================================
-# FIXED: always writes to root/data/reports.json
-# ============================================================
 def save_report(report_data, filename="data/reports.json"):
-    # Get the directory where this script lives (reports/)
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    # Resolve relative path to the parent (root) folder
     if not os.path.isabs(filename):
         filename = os.path.join(script_dir, '..', filename)
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w") as f:
         json.dump(report_data, f, indent=2, default=str)
     logger.info(f"Report saved to {filename}")
-# ============================================================
 
 def main():
     logger.info("=" * 60)
     logger.info("FraudGuard Report Generation Starting")
     logger.info("=" * 60)
 
-    try:
-        if not DATABASE_URL:
-            logger.error("DATABASE_URL is not set. Please create .env file.")
-            return False
+    if not DATABASE_URL:
+        logger.error("DATABASE_URL is not set. Please create .env file.")
+        return False
 
+    conn = None
+    try:
         conn = get_connection()
         report = build_report(conn)
         conn.close()
+        conn = None
 
         save_report(report)
 
@@ -323,6 +328,9 @@ def main():
         logger.error(f"❌ Report generation failed: {e}")
         import traceback
         traceback.print_exc()
+        if conn:
+            conn.rollback()
+            conn.close()
         return False
 
 if __name__ == "__main__":
