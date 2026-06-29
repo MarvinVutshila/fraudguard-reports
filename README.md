@@ -1,95 +1,41 @@
-# 🛡️ FraudGuard Transaction Monitoring Dashboard
+# 🛡️ FraudGuard
 
-<p align="center">
-  <img src="assets/logo.png" width="140" alt="FraudGuard Logo">
-</p>
+> **A real-time fraud detection and transaction monitoring dashboard built with HTML, CSS, JavaScript, and Python.**
 
-<p align="center">
-
-![GitHub last commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/fraudguard-dashboard)
-![GitHub Actions](https://github.com/YOUR_USERNAME/fraudguard-dashboard/actions/workflows/report.yml/badge.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![Status](https://img.shields.io/badge/status-Production-success)
-
-</p>
+FraudGuard provides financial institutions and fraud analysts with an intuitive dashboard for monitoring transaction activity, fraud risk, analyst overrides, and overall system health. Reports are generated automatically using Python and can be deployed as a static website using GitHub Pages.
 
 ---
 
-## 🚀 Live Demo
+# 📸 Screenshots
 
-🌐 **Dashboard**
+## Login Page
 
-https://YOUR_USERNAME.github.io/fraudguard-dashboard/
+![Login Page](assets/loginPage.png)
 
 ---
 
-# Dashboard Preview
-
-## Main Dashboard
+## Dashboard
 
 ![Dashboard](assets/dashboard.png)
 
-## Analytics
+---
 
-![Analytics](assets/analytics.png)
+# ✨ Features
 
-## Transaction History
-
-![History](assets/history.png)
+* 📊 Real-time transaction monitoring
+* 💳 Transaction volume analytics
+* 🚨 Risk distribution visualization
+* 👨‍💻 Analyst override tracking
+* 👥 User activity monitoring
+* ⚡ System health dashboard
+* 📈 Interactive charts
+* 📁 Automatic report generation
+* 🔄 Scheduled report updates
+* 🌐 GitHub Pages deployment
 
 ---
 
-# Overview
-
-FraudGuard is a lightweight real-time transaction monitoring dashboard designed for fraud analysts and financial institutions.
-
-The platform visualises transaction activity, fraud predictions, analyst overrides, and system health using interactive charts and live reports generated automatically by Python.
-
-The dashboard is built with **HTML, CSS and Vanilla JavaScript**, while automated reporting is handled using **Python** and **GitHub Actions**, making it deployable as a completely static website through GitHub Pages.
-
----
-
-# Features
-
-✅ Real-time transaction monitoring
-
-✅ Risk score classification
-
-✅ Fraud decision tracking
-
-✅ Analyst override management
-
-✅ Daily transaction analytics
-
-✅ Interactive charts
-
-✅ System health monitoring
-
-✅ CSV export
-
-✅ Automatic report generation
-
-✅ GitHub Actions automation
-
-✅ GitHub Pages deployment
-
----
-
-# Screenshots
-
-| Dashboard                 | Transactions            |
-| ------------------------- | ----------------------- |
-| ![](assets/dashboard.png) | ![](assets/history.png) |
-
-| Reports                | Analytics                 |
-| ---------------------- | ------------------------- |
-| ![](assets/report.png) | ![](assets/analytics.png) |
-
----
-
-# Technology Stack
+# 🛠️ Tech Stack
 
 ### Frontend
 
@@ -98,86 +44,82 @@ The dashboard is built with **HTML, CSS and Vanilla JavaScript**, while automate
 * Vanilla JavaScript
 * Chart.js
 
-### Backend Automation
+### Backend
 
 * Python
-* Requests
 * JSON
 
-### Deployment
+### Deployment & Automation
 
 * GitHub Pages
 * GitHub Actions
 
 ---
 
-# Project Structure
+# 📂 Project Structure
 
 ```text
-fraudguard-dashboard/
+FraudGuard/
 │
 ├── .github/
 │   └── workflows/
-│       └── report.yml
 │
 ├── assets/
 │   ├── dashboard.png
-│   ├── analytics.png
-│   ├── history.png
-│   └── report.png
+│   └── loginPage.png
 │
 ├── css/
-│   └── style.css
-│
-├── js/
-│   └── dashboard.js
 │
 ├── data/
-│   └── reports.json
+│
+├── js/
 │
 ├── reports/
 │
-├── logs/
-│
+├── .gitignore
+├── CNAME
+├── README.md
 ├── generate_report.py
 ├── run_report.py
 ├── requirements.txt
-├── render.yaml
-├── index.html
-└── README.md
+└── index.html
 ```
 
 ---
 
-# Installation
+# 🚀 Getting Started
 
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/fraudguard-dashboard.git
-
-cd fraudguard-dashboard
+git clone https://github.com/YOUR_USERNAME/FraudGuard.git
 ```
 
-Install dependencies
+Navigate into the project
+
+```bash
+cd FraudGuard
+```
+
+Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Generate report data
+Generate the latest report
 
 ```bash
 python run_report.py
 ```
 
-Start a local server
+Run a local server
 
 ```bash
 python -m http.server 8000
 ```
 
-Open
+Open your browser and visit
 
 ```
 http://localhost:8000
@@ -185,104 +127,62 @@ http://localhost:8000
 
 ---
 
-# Automated Reporting
+# 🔄 Automated Reports
 
-Reports are generated automatically using Python.
+FraudGuard includes automated reporting powered by Python.
 
-The automation:
+The reporting workflow:
 
-* Retrieves transaction information
-* Calculates fraud statistics
-* Generates JSON reports
-* Updates dashboard data
-* Publishes changes using GitHub Actions
+* Collects transaction data
+* Generates dashboard analytics
+* Updates the JSON report file
+* Refreshes dashboard statistics
 
----
-
-# GitHub Actions
-
-Every scheduled workflow automatically:
-
-* Generates the latest report
-* Commits updated JSON files
-* Pushes changes to GitHub
-* Deploys the latest dashboard to GitHub Pages
+This process can be scheduled using GitHub Actions for continuous updates.
 
 ---
 
-# Dashboard Modules
+# 📊 Dashboard Overview
 
-### Transaction Feed
-
-Monitor recent transactions with:
-
-* Risk Score
-* Decision
-* Status
-* Override History
-
----
-
-### Risk Distribution
-
-Visual breakdown of:
-
-* Low Risk
-* Medium Risk
-* High Risk
-* Critical Risk
-
----
-
-### System Health
-
-Monitor
-
-* API Status
-* Accuracy
-* Latency
-* Active Analysts
-* Alerts
-* Uptime
-
----
-
-### Reports
-
-Automatically generated daily reports including
+The dashboard provides real-time insight into:
 
 * Total Transactions
-* Approval Rate
-* Fraud Detection Rate
-* Analyst Performance
-* Daily Trends
+* Total Transaction Value
+* Blocked Transactions
+* Average Risk Score
+* Pending Reviews
+* Active Users
+* Daily Transaction Volume
+* Risk Distribution
+* Analyst Overrides
+* Top Users
+* System Health
 
 ---
 
-# Deployment
+# 🌍 Deployment
 
-This project is deployed using
+The dashboard can be deployed easily using:
 
 * GitHub Pages
-* GitHub Actions
-
-Every workflow execution updates the live dashboard automatically.
+* Render
+* Any static web hosting service
 
 ---
 
-# Future Improvements
+# 🚀 Future Improvements
 
+* Machine Learning API integration
 * User authentication
 * Role-based access control
-* Dark mode
-* Real-time WebSocket updates
-* PDF reporting
-* Email alerts
-* Machine Learning dashboard
+* PDF report generation
+* Email notifications
+* Live WebSocket updates
+* Audit logging
 
 ---
 
-# Author
+# 👨‍💻 Author
 
 **Marvin Vutshila**
 
@@ -290,12 +190,14 @@ Computer Science Student
 
 Fraud Detection & Machine Learning Enthusiast
 
-GitHub:
-
-https://github.com/YOUR_USERNAME
+GitHub: https://github.com/YOUR_USERNAME
 
 ---
 
-# License
+# 📄 License
 
 This project is licensed under the MIT License.
+
+---
+
+⭐ If you found this project interesting, consider giving it a star.
