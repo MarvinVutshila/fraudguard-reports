@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-06-29T14:24:28.958304",
+  "generated_at": "2026-06-29T16:31:39.430765",
   "period": {
-    "week_start": "2026-06-22T14:24:28.958304",
-    "month_start": "2026-05-30T14:24:28.958304"
+    "week_start": "2026-06-22T16:31:39.430765",
+    "month_start": "2026-05-30T16:31:39.430765"
   },
   "daily": {
     "transactions": [
       {
         "date": "2026-06-29",
-        "total": 1000,
-        "blocked": 2,
-        "reviewed": 9,
-        "approved": 989,
-        "avg_risk": 0.0114,
-        "total_amount": 77855.555,
-        "blocked_amount": 114.89,
-        "approved_amount": 76714.66
+        "total": 1011,
+        "blocked": 8,
+        "reviewed": 7,
+        "approved": 996,
+        "avg_risk": 0.0153,
+        "total_amount": 79454.53,
+        "blocked_amount": 460.33,
+        "approved_amount": 78013.695
       },
       {
         "date": "2026-06-28",
@@ -24,7 +24,7 @@
         "reviewed": 3,
         "approved": 694,
         "avg_risk": 0.0104,
-        "total_amount": 67320.05,
+        "total_amount": 67320.03,
         "blocked_amount": 171.04,
         "approved_amount": 66791.65
       },
@@ -35,9 +35,9 @@
         "reviewed": 2,
         "approved": 298,
         "avg_risk": 0.0059,
-        "total_amount": 21477.477,
+        "total_amount": 21477.469,
         "blocked_amount": 0.0,
-        "approved_amount": 20191.117
+        "approved_amount": 20191.11
       },
       {
         "date": "2026-06-25",
@@ -46,9 +46,9 @@
         "reviewed": 4,
         "approved": 1193,
         "avg_risk": 0.0079,
-        "total_amount": 109645.51,
+        "total_amount": 109645.484,
         "blocked_amount": 182.39,
-        "approved_amount": 109243.24
+        "approved_amount": 109243.22
       },
       {
         "date": "2026-06-24",
@@ -57,9 +57,9 @@
         "reviewed": 0,
         "approved": 198,
         "avg_risk": 0.0158,
-        "total_amount": 19177.754,
+        "total_amount": 19177.752,
         "blocked_amount": 247.86,
-        "approved_amount": 18929.895
+        "approved_amount": 18929.89
       },
       {
         "date": "2026-06-23",
@@ -68,50 +68,50 @@
         "reviewed": 1,
         "approved": 300,
         "avg_risk": 0.0143,
-        "total_amount": 75754.17,
+        "total_amount": 75754.12,
         "blocked_amount": 254.97,
-        "approved_amount": 75487.86
+        "approved_amount": 75487.805
       },
       {
         "date": "2026-06-22",
-        "total": 511,
+        "total": 311,
         "blocked": 7,
         "reviewed": 2,
-        "approved": 502,
-        "avg_risk": 0.0207,
-        "total_amount": 45671.016,
+        "approved": 302,
+        "avg_risk": 0.0277,
+        "total_amount": 31640.375,
         "blocked_amount": 972.3201,
-        "approved_amount": 43552.203
+        "approved_amount": 29521.568
       }
     ]
   },
   "weekly": {
-    "total": 4215,
-    "blocked": 20,
-    "reviewed": 21,
-    "approved": 4174,
-    "avg_risk": 0.0114,
-    "total_amount": 416901.94,
-    "blocked_amount": 1943.4702,
-    "approved_amount": 410911.12
+    "total": 4026,
+    "blocked": 26,
+    "reviewed": 19,
+    "approved": 3981,
+    "avg_risk": 0.0125,
+    "total_amount": 404469.94,
+    "blocked_amount": 2288.91,
+    "approved_amount": 398179.1
   },
   "monthly": {
-    "total": 4415,
-    "blocked": 21,
-    "reviewed": 21,
-    "approved": 4373,
-    "avg_risk": 0.0114,
-    "total_amount": 435055.8,
-    "blocked_amount": 1944.2302,
-    "approved_amount": 429064.22
+    "total": 4426,
+    "blocked": 27,
+    "reviewed": 19,
+    "approved": 4380,
+    "avg_risk": 0.0123,
+    "total_amount": 436654.72,
+    "blocked_amount": 2289.67,
+    "approved_amount": 430363.2
   },
   "summary": {
     "risk_distribution": [
       {
         "risk_level": "LOW",
-        "count": 4373,
+        "count": 4380,
         "avg_probability": 0.0065,
-        "percentage": "99.05"
+        "percentage": "98.96"
       },
       {
         "risk_level": "MEDIUM",
@@ -127,18 +127,18 @@
       },
       {
         "risk_level": "CRITICAL",
-        "count": 13,
-        "avg_probability": 0.9881,
-        "percentage": "0.29"
+        "count": 17,
+        "avg_probability": 0.9897,
+        "percentage": "0.38"
       }
     ],
     "top_users": [
       {
         "username": "marvinmakhubela04@gmail.com",
-        "login_count": 76,
-        "successful": 49,
+        "login_count": 88,
+        "successful": 61,
         "failed": 27,
-        "success_rate": "64.47"
+        "success_rate": "69.32"
       },
       {
         "username": "makhubelaavela@gmail.com",
@@ -158,10 +158,10 @@
     "override_activity": [
       {
         "analyst": "marvinmakhubela04@gmail.com",
-        "override_count": 7,
+        "override_count": 9,
         "approved_overrides": 3,
-        "blocked_overrides": 4,
-        "approve_rate": "42.86"
+        "blocked_overrides": 6,
+        "approve_rate": "33.33"
       },
       {
         "analyst": "makhubelaavela@gmail.com",
@@ -206,8 +206,8 @@
       },
       {
         "hour": "16",
-        "count": 200,
-        "avg_risk": 0.0097
+        "count": 11,
+        "avg_risk": 0.3688
       },
       {
         "hour": "17",
@@ -233,25 +233,25 @@
     "decision_breakdown": [
       {
         "decision": "APPROVE",
-        "count": 4373,
+        "count": 4380,
         "avg_probability": 0.0065,
-        "percentage": "99.05"
+        "percentage": "98.96"
       },
       {
         "decision": "BLOCK",
-        "count": 21,
-        "avg_probability": 0.7382,
-        "percentage": "0.48"
+        "count": 27,
+        "avg_probability": 0.7657,
+        "percentage": "0.61"
       },
       {
         "decision": "REVIEW",
-        "count": 21,
-        "avg_probability": 0.3146,
-        "percentage": "0.48"
+        "count": 19,
+        "avg_probability": 0.285,
+        "percentage": "0.43"
       }
     ],
     "total_users": 3,
     "active_users_7d": 3,
-    "total_transactions_30d": 4415
+    "total_transactions_30d": 4426
   }
 }
