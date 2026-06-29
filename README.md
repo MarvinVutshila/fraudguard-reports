@@ -190,7 +190,7 @@ Computer Science Student
 
 Fraud Detection & Machine Learning Enthusiast
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/MarvinVutshila
 
 ---
 
