@@ -4,9 +4,26 @@
 
 FraudGuard provides financial institutions and fraud analysts with an intuitive dashboard for monitoring transaction activity, fraud risk, analyst overrides, and overall system health. Reports are generated automatically using Python and can be deployed as a static website using GitHub Pages.
 
+
+---
+
+# 🌐 Live Demo
+
+
+🚀 FraudGuard Application:
+
+https://fraudguard-434w.onrender.com/login
+
+
+📄 FraudGuard Reports Dashboard:
+
+https://marvinvutshila.github.io/fraudguard-reports/
+
+
 ---
 
 # 📸 Screenshots
+
 
 ## Login Page
 
@@ -33,9 +50,11 @@ FraudGuard provides financial institutions and fraud analysts with an intuitive 
 * 🔄 Scheduled report updates
 * 🌐 GitHub Pages deployment
 
+
 ---
 
 # 🛠️ Tech Stack
+
 
 ### Frontend
 
@@ -44,15 +63,19 @@ FraudGuard provides financial institutions and fraud analysts with an intuitive 
 * Vanilla JavaScript
 * Chart.js
 
+
 ### Backend
 
 * Python
 * JSON
 
+
 ### Deployment & Automation
 
 * GitHub Pages
 * GitHub Actions
+* Render
+
 
 ---
 
@@ -89,11 +112,13 @@ FraudGuard/
 
 # 🚀 Getting Started
 
+
 Clone the repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/FraudGuard.git
 ```
+
 
 Navigate into the project
 
@@ -101,11 +126,13 @@ Navigate into the project
 cd FraudGuard
 ```
 
+
 Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
+
 
 Generate the latest report
 
@@ -113,13 +140,15 @@ Generate the latest report
 python run_report.py
 ```
 
+
 Run a local server
 
 ```bash
 python -m http.server 8000
 ```
 
-Open your browser and visit
+
+Open your browser and visit:
 
 ```
 http://localhost:8000
@@ -129,7 +158,9 @@ http://localhost:8000
 
 # 🔄 Automated Reports
 
+
 FraudGuard includes automated reporting powered by Python.
+
 
 The reporting workflow:
 
@@ -138,13 +169,17 @@ The reporting workflow:
 * Updates the JSON report file
 * Refreshes dashboard statistics
 
+
 This process can be scheduled using GitHub Actions for continuous updates.
+
 
 ---
 
 # 📊 Dashboard Overview
 
+
 The dashboard provides real-time insight into:
+
 
 * Total Transactions
 * Total Transaction Value
@@ -158,19 +193,24 @@ The dashboard provides real-time insight into:
 * Top Users
 * System Health
 
+
 ---
 
 # 🌍 Deployment
 
-The dashboard can be deployed easily using:
+
+FraudGuard is deployed using:
+
 
 * GitHub Pages
 * Render
-* Any static web hosting service
+* Static web hosting
+
 
 ---
 
 # 🚀 Future Improvements
+
 
 * Machine Learning API integration
 * User authentication
@@ -180,23 +220,32 @@ The dashboard can be deployed easily using:
 * Live WebSocket updates
 * Audit logging
 
+
 ---
 
 # 👨‍💻 Author
 
+
 **Marvin Vutshila**
+
 
 Computer Science Student
 
 Fraud Detection & Machine Learning Enthusiast
 
-GitHub: https://github.com/MarvinVutshila
+
+GitHub:
+
+https://github.com/MarvinVutshila
+
 
 ---
 
 # 📄 License
 
+
 This project is licensed under the MIT License.
+
 
 ---
 
