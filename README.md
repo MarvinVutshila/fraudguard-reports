@@ -3,7 +3,7 @@
 A lightweight, real‑time dashboard for monitoring transaction risks, overrides, and system health.  
 Built with vanilla HTML/CSS/JS and automated with Python scripts. Deployable on static hosting or Render.
 
-![Dashboard Preview]([https://via.placeholder.com/800x400?text=FraudGuard+Dashboard+Preview](https://marvinvutshila.github.io/fraudguard-reports/))
+![Dashboard Preview][https://via.placeholder.com/800x400?text=FraudGuard+Dashboard+Preview](https://marvinvutshila.github.io/fraudguard-reports/)
 
 ## 📊 Features
 
