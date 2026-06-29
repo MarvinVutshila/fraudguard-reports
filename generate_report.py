@@ -42,6 +42,8 @@ def clean_value(value):
         return value.strip()
     return value
 
+# ---------- Data fetching (using exact column names from your schema) ----------
+
 def get_transaction_summary(conn, since):
     sql = """
         SELECT 
@@ -132,19 +134,15 @@ def get_top_users(conn):
         return results
     except Exception as e:
         logger.warning(f"Could not fetch top users: {e}")
-        conn.rollback()   # ← clear the aborted transaction
+        conn.rollback()          # ← clear the aborted transaction
         return []
 
-# ============================================================
-# FIXED: Use the correct column names from the actual table
-#   overridden_by  → analyst
-#   new_decision   → the final decision after override
-# ============================================================
+# ✅ Fixed: uses overridden_by and new_decision (actual column names)
 def get_override_activity(conn):
     try:
         sql = """
             SELECT 
-                overridden_by,
+                overridden_by as analyst,
                 COUNT(*) as override_count,
                 COUNT(*) FILTER (WHERE new_decision = 'APPROVE') as approved_overrides,
                 COUNT(*) FILTER (WHERE new_decision = 'BLOCK') as blocked_overrides,
@@ -161,7 +159,7 @@ def get_override_activity(conn):
         return results
     except Exception as e:
         logger.warning(f"Could not fetch override activity: {e}")
-        conn.rollback()   # ← clear the aborted transaction
+        conn.rollback()          # ← clear the aborted transaction
         return []
 
 def get_hourly_pattern(conn):
@@ -282,13 +280,13 @@ def build_report(conn):
     return convert(report)
 
 def save_report(report_data, filename="data/reports.json"):
+    # Save to the repo root's data/ folder
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    if not os.path.isabs(filename):
-        filename = os.path.join(script_dir, '..', filename)
-    os.makedirs(os.path.dirname(filename), exist_ok=True)
-    with open(filename, "w") as f:
+    os.makedirs(os.path.join(script_dir, "data"), exist_ok=True)
+    file_path = os.path.join(script_dir, filename)
+    with open(file_path, "w") as f:
         json.dump(report_data, f, indent=2, default=str)
-    logger.info(f"Report saved to {filename}")
+    logger.info(f"Report saved to {file_path}")
 
 def main():
     logger.info("=" * 60)
@@ -296,7 +294,7 @@ def main():
     logger.info("=" * 60)
 
     if not DATABASE_URL:
-        logger.error("DATABASE_URL is not set. Please create .env file.")
+        logger.error("DATABASE_URL is not set. Please create .env file or set the GitHub Secret.")
         return False
 
     conn = None
