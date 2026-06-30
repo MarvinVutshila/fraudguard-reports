@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-30T10:21:47.559675",
+  "generated_at": "2026-06-30T13:01:36.160362",
   "period": {
-    "week_start": "2026-06-23T10:21:47.559675",
-    "month_start": "2026-05-31T10:21:47.559675"
+    "week_start": "2026-06-23T13:01:36.160362",
+    "month_start": "2026-05-31T13:01:36.160362"
   },
   "daily": {
     "transactions": [
@@ -13,9 +13,9 @@
         "reviewed": 20,
         "approved": 2987,
         "avg_risk": 0.0133,
-        "total_amount": 250190.66,
+        "total_amount": 250190.64,
         "blocked_amount": 772.25,
-        "approved_amount": 246886.62
+        "approved_amount": 246886.58
       },
       {
         "date": "2026-06-28",
@@ -35,7 +35,7 @@
         "reviewed": 2,
         "approved": 298,
         "avg_risk": 0.0059,
-        "total_amount": 21477.473,
+        "total_amount": 21477.47,
         "blocked_amount": 0.0,
         "approved_amount": 20191.115
       },
@@ -63,26 +63,26 @@
       },
       {
         "date": "2026-06-23",
-        "total": 303,
+        "total": 300,
         "blocked": 2,
         "reviewed": 1,
-        "approved": 300,
+        "approved": 297,
         "avg_risk": 0.0143,
-        "total_amount": 75754.13,
+        "total_amount": 25254.168,
         "blocked_amount": 254.97,
-        "approved_amount": 75487.82
+        "approved_amount": 24987.857
       }
     ]
   },
   "weekly": {
-    "total": 5726,
+    "total": 5723,
     "blocked": 26,
     "reviewed": 30,
-    "approved": 5670,
+    "approved": 5667,
     "avg_risk": 0.0116,
-    "total_amount": 543565.8,
+    "total_amount": 493065.12,
     "blocked_amount": 1628.5101,
-    "approved_amount": 537530.3
+    "approved_amount": 487029.94
   },
   "monthly": {
     "total": 6437,
@@ -179,11 +179,6 @@
         "avg_risk": 0.0101
       },
       {
-        "hour": "12",
-        "count": 3,
-        "avg_risk": 0.019
-      },
-      {
         "hour": "13",
         "count": 100,
         "avg_risk": 0.0176
@@ -235,7 +230,7 @@
       }
     ],
     "total_users": 3,
-    "active_users_7d": 3,
+    "active_users_7d": 2,
     "total_transactions_30d": 6437
   }
 }
