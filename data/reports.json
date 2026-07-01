@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-01T13:34:20.678721",
+  "generated_at": "2026-07-01T16:13:29.407277",
   "period": {
-    "week_start": "2026-06-24T13:34:20.678721",
-    "month_start": "2026-06-01T13:34:20.678721"
+    "week_start": "2026-06-24T16:13:29.407277",
+    "month_start": "2026-06-01T16:13:29.407277"
   },
   "daily": {
     "transactions": [
@@ -13,9 +13,9 @@
         "reviewed": 20,
         "approved": 2987,
         "avg_risk": 0.0133,
-        "total_amount": 250190.5,
+        "total_amount": 250190.64,
         "blocked_amount": 772.25,
-        "approved_amount": 246886.52
+        "approved_amount": 246886.66
       },
       {
         "date": "2026-06-28",
@@ -26,7 +26,7 @@
         "avg_risk": 0.0104,
         "total_amount": 67320.03,
         "blocked_amount": 171.04,
-        "approved_amount": 66791.65
+        "approved_amount": 66791.64
       },
       {
         "date": "2026-06-26",
@@ -37,7 +37,7 @@
         "avg_risk": 0.0059,
         "total_amount": 21477.47,
         "blocked_amount": 0.0,
-        "approved_amount": 20191.115
+        "approved_amount": 20191.111
       },
       {
         "date": "2026-06-25",
@@ -46,32 +46,21 @@
         "reviewed": 4,
         "approved": 1193,
         "avg_risk": 0.0079,
-        "total_amount": 109645.516,
+        "total_amount": 109645.52,
         "blocked_amount": 182.39,
         "approved_amount": 109243.25
-      },
-      {
-        "date": "2026-06-24",
-        "total": 200,
-        "blocked": 2,
-        "reviewed": 0,
-        "approved": 198,
-        "avg_risk": 0.0158,
-        "total_amount": 19177.75,
-        "blocked_amount": 247.86,
-        "approved_amount": 18929.89
       }
     ]
   },
   "weekly": {
-    "total": 5423,
-    "blocked": 24,
+    "total": 5223,
+    "blocked": 22,
     "reviewed": 29,
-    "approved": 5370,
-    "avg_risk": 0.0114,
-    "total_amount": 467811.03,
-    "blocked_amount": 1373.54,
-    "approved_amount": 462042.16
+    "approved": 5172,
+    "avg_risk": 0.0113,
+    "total_amount": 448633.4,
+    "blocked_amount": 1125.68,
+    "approved_amount": 443112.3
   },
   "monthly": {
     "total": 6437,
@@ -166,16 +155,6 @@
         "hour": "1",
         "count": 1600,
         "avg_risk": 0.0101
-      },
-      {
-        "hour": "13",
-        "count": 100,
-        "avg_risk": 0.0176
-      },
-      {
-        "hour": "14",
-        "count": 100,
-        "avg_risk": 0.0141
       },
       {
         "hour": "16",
