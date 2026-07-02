@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-02T19:05:08.614238",
+  "generated_at": "2026-07-02T20:49:00.911889",
   "period": {
-    "week_start": "2026-06-25T19:05:08.614238",
-    "month_start": "2026-06-02T19:05:08.614238"
+    "week_start": "2026-06-25T20:49:00.911889",
+    "month_start": "2026-06-02T20:49:00.911889"
   },
   "daily": {
     "transactions": [
@@ -13,9 +13,9 @@
         "reviewed": 20,
         "approved": 2987,
         "avg_risk": 0.0133,
-        "total_amount": 250190.67,
+        "total_amount": 250190.73,
         "blocked_amount": 772.25,
-        "approved_amount": 246886.7
+        "approved_amount": 246886.77
       },
       {
         "date": "2026-06-28",
@@ -26,7 +26,7 @@
         "avg_risk": 0.0104,
         "total_amount": 67320.03,
         "blocked_amount": 171.04,
-        "approved_amount": 66791.65
+        "approved_amount": 66791.64
       },
       {
         "date": "2026-06-26",
@@ -35,32 +35,21 @@
         "reviewed": 2,
         "approved": 298,
         "avg_risk": 0.0059,
-        "total_amount": 21477.479,
+        "total_amount": 21477.469,
         "blocked_amount": 0.0,
-        "approved_amount": 20191.117
-      },
-      {
-        "date": "2026-06-25",
-        "total": 900,
-        "blocked": 1,
-        "reviewed": 2,
-        "approved": 897,
-        "avg_risk": 0.0071,
-        "total_amount": 81628.766,
-        "blocked_amount": 1.0,
-        "approved_amount": 81468.66
+        "approved_amount": 20191.11
       }
     ]
   },
   "weekly": {
-    "total": 4922,
-    "blocked": 19,
-    "reviewed": 27,
-    "approved": 4876,
-    "avg_risk": 0.0113,
-    "total_amount": 420616.84,
-    "blocked_amount": 944.29,
-    "approved_amount": 415337.94
+    "total": 4022,
+    "blocked": 18,
+    "reviewed": 25,
+    "approved": 3979,
+    "avg_risk": 0.0123,
+    "total_amount": 338987.97,
+    "blocked_amount": 943.29,
+    "approved_amount": 333869.44
   },
   "monthly": {
     "total": 6437,
@@ -158,8 +147,8 @@
       },
       {
         "hour": "19",
-        "count": 1900,
-        "avg_risk": 0.0083
+        "count": 1000,
+        "avg_risk": 0.0094
       },
       {
         "hour": "21",
