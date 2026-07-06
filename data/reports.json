@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-07-06T14:51:27.563454",
+  "generated_at": "2026-07-06T17:35:50.139363",
   "period": {
-    "week_start": "2026-06-29T14:51:27.563454",
-    "month_start": "2026-06-06T14:51:27.563454"
+    "week_start": "2026-06-29T17:35:50.139363",
+    "month_start": "2026-06-06T17:35:50.139363"
   },
   "daily": {
     "transactions": [
       {
         "date": "2026-06-29",
-        "total": 2022,
-        "blocked": 11,
-        "reviewed": 13,
-        "approved": 1998,
-        "avg_risk": 0.0143,
-        "total_amount": 172334.94,
-        "blocked_amount": 611.85,
-        "approved_amount": 170171.89
+        "total": 1000,
+        "blocked": 1,
+        "reviewed": 4,
+        "approved": 995,
+        "avg_risk": 0.0094,
+        "total_amount": 91289.96,
+        "blocked_amount": 1.0,
+        "approved_amount": 90590.805
       }
     ]
   },
   "weekly": {
-    "total": 2022,
-    "blocked": 11,
-    "reviewed": 13,
-    "approved": 1998,
-    "avg_risk": 0.0143,
-    "total_amount": 172335.25,
-    "blocked_amount": 611.85,
-    "approved_amount": 170172.19
+    "total": 1000,
+    "blocked": 1,
+    "reviewed": 4,
+    "approved": 995,
+    "avg_risk": 0.0094,
+    "total_amount": 91289.96,
+    "blocked_amount": 1.0,
+    "approved_amount": 90590.805
   },
   "monthly": {
     "total": 6437,
@@ -113,11 +113,6 @@
       }
     ],
     "hourly_pattern": [
-      {
-        "hour": "16",
-        "count": 1022,
-        "avg_risk": 0.0191
-      },
       {
         "hour": "19",
         "count": 1000,
