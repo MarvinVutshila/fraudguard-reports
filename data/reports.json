@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-06T19:28:46.458752",
+  "generated_at": "2026-07-06T21:18:01.214425",
   "period": {
-    "week_start": "2026-06-29T19:28:46.458752",
-    "month_start": "2026-06-06T19:28:46.458752"
+    "week_start": "2026-06-29T21:18:01.214425",
+    "month_start": "2026-06-06T21:18:01.214425"
   },
   "daily": {
     "transactions": []
@@ -122,7 +122,7 @@
       }
     ],
     "total_users": 3,
-    "active_users_7d": 1,
+    "active_users_7d": 0,
     "total_transactions_30d": 6437
   }
 }
