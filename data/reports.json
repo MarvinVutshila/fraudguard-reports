@@ -1,33 +1,21 @@
 {
-  "generated_at": "2026-07-06T17:35:50.139363",
+  "generated_at": "2026-07-06T19:28:46.458752",
   "period": {
-    "week_start": "2026-06-29T17:35:50.139363",
-    "month_start": "2026-06-06T17:35:50.139363"
+    "week_start": "2026-06-29T19:28:46.458752",
+    "month_start": "2026-06-06T19:28:46.458752"
   },
   "daily": {
-    "transactions": [
-      {
-        "date": "2026-06-29",
-        "total": 1000,
-        "blocked": 1,
-        "reviewed": 4,
-        "approved": 995,
-        "avg_risk": 0.0094,
-        "total_amount": 91289.96,
-        "blocked_amount": 1.0,
-        "approved_amount": 90590.805
-      }
-    ]
+    "transactions": []
   },
   "weekly": {
-    "total": 1000,
-    "blocked": 1,
-    "reviewed": 4,
-    "approved": 995,
-    "avg_risk": 0.0094,
-    "total_amount": 91289.96,
-    "blocked_amount": 1.0,
-    "approved_amount": 90590.805
+    "total": 0,
+    "blocked": 0,
+    "reviewed": 0,
+    "approved": 0,
+    "avg_risk": 0.0,
+    "total_amount": 0.0,
+    "blocked_amount": 0.0,
+    "approved_amount": 0.0
   },
   "monthly": {
     "total": 6437,
@@ -112,13 +100,7 @@
         "approve_rate": "50.00"
       }
     ],
-    "hourly_pattern": [
-      {
-        "hour": "19",
-        "count": 1000,
-        "avg_risk": 0.0094
-      }
-    ],
+    "hourly_pattern": [],
     "decision_breakdown": [
       {
         "decision": "APPROVE",
