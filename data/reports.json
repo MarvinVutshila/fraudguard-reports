@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-17T23:39:58.714630",
+  "generated_at": "2026-07-18T01:14:35.976790",
   "period": {
-    "week_start": "2026-07-10T23:39:58.714630",
-    "month_start": "2026-06-17T23:39:58.714630"
+    "week_start": "2026-07-11T01:14:35.976790",
+    "month_start": "2026-06-18T01:14:35.976790"
   },
   "daily": {
     "transactions": []
@@ -57,10 +57,10 @@
     "top_users": [
       {
         "username": "marvinmakhubela04@gmail.com",
-        "login_count": 90,
-        "successful": 63,
+        "login_count": 92,
+        "successful": 65,
         "failed": 27,
-        "success_rate": "70.00"
+        "success_rate": "70.65"
       },
       {
         "username": "makhubelaavela@gmail.com",
@@ -122,7 +122,7 @@
       }
     ],
     "total_users": 3,
-    "active_users_7d": 0,
+    "active_users_7d": 1,
     "total_transactions_30d": 6437
   }
 }
