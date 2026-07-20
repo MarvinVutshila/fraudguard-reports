@@ -1,6 +1,6 @@
 name: Update Reports Dashboard
 
-on:
+off:
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
