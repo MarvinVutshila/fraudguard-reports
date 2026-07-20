@@ -1,8 +1,7 @@
 name: Update Reports Dashboard
 
-off:
+on:
   schedule:
-    - cron: '0 * * * *'
   workflow_dispatch:
 
 permissions:
